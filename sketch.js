@@ -1,12 +1,14 @@
 let sp = [];
+let md = [];
 
 function setup() {
-  angleMode(DEGREES);
+  angleMode(DEGREES); // cambiar a grados
   createCanvas(windowWidth, windowHeight);
+  md = new medu(mouseX, mouseY);
 }
 
 function draw() {
-  background(120, 30); // variante 290, 220, 140, 60
+  background(31, 72, 120); // variante 290, 220, 140, 60
   for (const [index, part] of sp.entries()) {
     part.update();
     part.display();
@@ -14,12 +16,9 @@ function draw() {
       sp.splice(index, 1);
     }
   }
+  sp.push(new Particulas(mouseX, mouseY)); // fase = 0 lado derecho
+  sp.push(new Particulas(mouseX, mouseY, 180)); // fase = 1 lado izquierdo (reflejo)
 
-  let np = new Particulas(mouseX, mouseY);
-  sp.push(np);
-}
-
-function mouseClicked() {
-  let np = new Particulas(mouseX, mouseY);
-  sp.push(np);
+  md.update();
+  md.display();
 }
