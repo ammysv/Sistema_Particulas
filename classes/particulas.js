@@ -13,13 +13,13 @@ class Particulas {
     this.grav = createVector(0, 0.2);
     this.fase = fase; // lado izquierdo o derecho para el movimiento
     this.angulo = 0; // Control de la onda
-    this.amp = random(70, 250); // distancia de ancho
+    this.amp = random(70, 250); // distancia de la onda
     this.co = color(random(100, 234), random(100, 180), random(100, 255), 150);
   }
 
   update() {
     if (!this.estaMuerta) {
-      this.angulo += 12;
+      this.angulo += 12; // incremento del ángulo
       let offsetX = sin(this.angulo + this.fase) * this.amp; // movimiento ondulatorio
 
       this.pos.x = lerp(this.pos.x, mouseX + offsetX, 0.05); // movimiento suave hacia la posición objetivo
