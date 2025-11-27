@@ -9,7 +9,11 @@ function setup() {
 }
 
 function draw() {
-  background(31, 72, 120); // variante 290, 220, 140, 60
+  //background(31, 72, 120); // variante 290, 220, 140, 60
+  for (let i = 0; i < height; i++) {
+    stroke(lerpColor(color("#74cbe6ff"), color("#003b7aff"), i / height)); // Degradado vertical
+    line(0, i, width, i); // Dibujar línea horizontal en cada paso del ciclo y forma el degradado
+  }
 
   for (let i = 0; i < spA.length - 1; i++) {
     noFill();

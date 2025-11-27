@@ -1,1 +1,1 @@
-¡Vamos a crear un nuevo sistema de patículas hechos con pelotas!
+En este sistema se intentó recrear la forma de una medusa con un conjunto de partículas que, al pasar el mouse, seguirá su movimiento; se utilizaron nuevas variables para dar la forma a los tentáculos.
